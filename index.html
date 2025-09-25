@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Raj Srivastava - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Single Canvas for ALL Background Animations -->
+    <canvas id="background-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo.svg" alt="Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- Hero content is now a sibling to the canvas, not a parent -->
+        <div class="hero-content">
+            <div class="profile-image">
+                <img class="profile-slide active" src="images/img1.jpg" alt="Profile Picture 1">
+                <img class="profile-slide" src="images/img2.jpg" alt="Profile Picture 2">
+                <img class="profile-slide" src="images/img3.jpg" alt="Profile Picture 3">
+            </div>
+            <h1 class="hero-title">Aditya Raj Srivastava</h1>
+            <h2 class="hero-subtitle">Computer Science Engineer & Researcher</h2>
+            <p class="hero-description">
+                Passionate about Post-Quantum Cryptography, Full-Stack Development, and AI/ML. 
+                Currently pursuing B.Tech at IIIT Kalyani with expertise in secure communication systems and modern web technologies.
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">9.37</div>
+                    <div class="stat-label">CGPA</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">350+</div>
+                    <div class="stat-label">Problems Solved</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Major Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2026</div>
+                    <div class="stat-label">Expected Graduation</div>
+                </div>
+            </div>
+            <div class="about-text">
+                <p>
+                    As an undergraduate researcher at IIIT Kalyani, I specialize in post-quantum cryptography and secure communication systems. 
+                    My research focuses on integrating post-quantum security measures with modern VPN protocols like WireGuard,SSH 
+                    ensuring robust protection against quantum adversaries.
+                </p>
+                <p>
+                    Beyond cryptography, I'm passionate about full-stack development and AI/ML applications. I've built several 
+                    production-ready applications using modern technologies like React.js, Python, and various cloud platforms. 
+                    My goal is to bridge the gap between theoretical computer science and practical software solutions.
+                </p>
+                <p>
+                    When I'm not coding or researching, you can find me solving competitive programming problems or exploring 
+                    the rich heritage of Indian culture and mythology, which deeply inspires my creative approach to technology.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section id="journey" class="section">
+        <h2 class="section-title">My Journey</h2>
+        <div class="journey-container">
+            <div class="railway-track">
+                <div class="train"><i class="fas fa-train-subway"></i></div>
+            </div>
+            <div class="stations">
+                <div class="station-item" data-type="education">
+                    <div class="station-content">
+                        <h4 class="station-title">Indian Institute of Information Technology, Kalyani</h4>
+                        <p class="station-subtitle">Computer Science Engineering, CGPA - 9.37</p>
+                        <span class="station-duration">2022 - Present</span>
+                    </div>
+                </div>
+                
+                <div class="station-item" data-type="education">
+                     <div class="station-content">
+                        <h4 class="station-title">Cambridge School, Nepura, Bihar</h4>
+                        <p class="station-subtitle">CBSE (Class XII), Aggregate - 92.15%</p>
+                        <span class="station-duration">2020 - 2022</span>
+                    </div>
+                </div>
+                 <div class="station-item" data-type="experience">
+                     <div class="station-content">
+                        <h4 class="station-title">IIIT Kalyani</h4>
+                        <p class="station-subtitle">Researcher</p>
+                        <span class="station-duration">Jan'25 - current</span>
+                    </div>
+                </div>
+                <div class="station-item" data-type="education">
+                    <div class="station-content">
+                        <h4 class="station-title">P.T.J.M Saraswati Vidya Mandir, Hasanpur, Bihar</h4>
+                        <p class="station-subtitle">CBSE (Class X), Aggregate - 96.1%</p>
+                        <span class="station-duration">2015 - 2020</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2 class="section-title">Skills & Expertise</h2>
+        <div class="scroller-container">
+            <div class="scroller" data-direction="left">
+                <ul class="skill-list">
+                    <li><i class="fab fa-html5"></i> HTML</li>
+                    <li><i class="fab fa-css3-alt"></i> CSS</li>
+                    <li><i class="fab fa-js"></i> JavaScript</li>
+                    <li><i class="fab fa-react"></i> React.js</li>
+                    <li><i class="fab fa-python"></i> Python</li>
+                    <li><i class="fab fa-git-alt"></i> Git/GitHub</li>
+                    <li><i class="fas fa-database"></i> MongoDB</li>
+                </ul>
+            </div>
+            <div class="scroller" data-direction="right">
+                <ul class="skill-list">
+                    <li><i class="fas fa-brain"></i> DSA</li>
+                    <li><i class="fas fa-server"></i> FastAPI</li>
+                    <li><i class="fas fa-comments"></i> Communication</li>
+                    <li><i class="fas fa-users"></i> Leadership</li>
+                    <li><i class="fas fa-puzzle-piece"></i> Problem Solving</li>
+                    <li><i class="fas fa-people-arrows"></i> Teamwork</li>
+                    <li><i class="fas fa-database"></i> MySQL</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card" 
+                 data-title="Secure Messaging App with Post-Quantum VPN"
+                 data-duration="March 2025 – May 2025"
+                 data-tech="C, Python, WireGuard, McEliece (Hermitian Codes), Linux"
+                 data-desc-1="• Designed a secure messaging app over WireGuard VPN with a post-quantum McEliece KEM based on Hermitian codes."
+                 data-desc-2="• Integrated PQC handshake with WireGuard's Curve25519 to achieve hybrid, quantum-resistant key exchange."
+                 data-desc-3="• Implemented end-to-end encrypted text messaging with multithreaded handling of traffic."
+                 data-github-link="#"
+                 data-live-link="#">
+    
+                <div class="project-image">
+                    <img src="images/vpn.jpg" alt="Project Thumbnail">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Secure Messaging App with Post-Quantum VPN</h3>
+                    <div class="project-tags">
+                        <span class="project-tag">Cryptography</span>
+                        <span class="project-tag">C</span>
+                        <span class="project-tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <button class="btn-secondary project-details-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" 
+                 data-title="Full-Stack RAG Application"
+                 data-duration="July 2025 – August 2025"
+                 data-tech="Python, FastAPI, LangChain, Qdrant, Cohere, Groq, JavaScript, Vercel, Render"
+                 data-desc-1="• Built a Retrieval-Augmented Generation (RAG) app for conversational queries on custom documents with cited answers."
+                 data-desc-2="• Developed ingestion pipeline for text chunking, Cohere embeddings, and Qdrant vector storage with reranker optimization."
+                 data-desc-3="• Implemented FastAPI backend + vanilla JS frontend, integrated Groq API for low-latency LLM responses."
+                 data-github-link="https://github.com/AditRajSrivastava/mini_rag.git"
+                 data-live-link="https://mini-rag-sepia.vercel.app/">
+    
+                <div class="project-image">
+                    <img src="images/rag.jpg" alt="Project Thumbnail">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Full-Stack RAG Application</h3>
+                    <div class="project-tags">
+                        <span class="project-tag">AI/ML</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Full-Stack</span>
+                    </div>
+                    <div class="project-links">
+                        <button class="btn-secondary project-details-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" 
+                 data-title="AI-Enhanced CRM System"
+                 data-duration="August 2025 – September 2025"
+                 data-tech="MERN Stack, Passport.js, JWT, Tailwind, Vercel, Render"
+                 data-desc-1="• Developed a full-stack CRM with customer CRUD, analytics dashboard, and AI-assisted campaign management."
+                 data-desc-2="• Implemented Google OAuth 2.0 authentication with Passport.js and JWT-secured API endpoints."
+                 data-desc-3="• Built campaign creation with simulated AI (segmentation, message generation, summarization)."
+                 data-github-link="https://github.com/AditRajSrivastava/ai_crm_app.git"
+                 data-live-link="https://ai-crm-app.vercel.app/">
+    
+                <div class="project-image">
+                    <img src="images/crm.jpg" alt="Project Thumbnail">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">AI-Enhanced CRM System</h3>
+                    <div class="project-tags">
+                        <span class="project-tag">MERN Stack</span>
+                        <span class="project-tag">AI</span>
+                        <span class="project-tag">Web App</span>
+                    </div>
+                    <div class="project-links">
+                        <button class="btn-secondary project-details-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-details">
+                <h3>Let's Collaborate</h3>
+                <p>
+                    I'm currently available for freelance projects and open to discussing new opportunities. If you have a project in mind or just want to connect, feel free to send a message or reach out through my other channels.
+                </p>
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+91-8102285461</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>adityasrivastava13112003@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Structure -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-duration"></p>
+            <p id="modal-tech"></p>
+            <div id="modal-description"></div>
+            <div class="modal-links">
+                <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+                <a id="modal-live" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="logo">
+                     <img src="images/logo.svg" alt="Logo" class="logo-img">
+                </div>
+                <p>"यत् भावो – तत् भवति।"</p>
+                <p class="tagline">You become what you believe.</p>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Me</h4>
+                <div class="social-links">
+                    <a href="https://github.com/AditRajSrivastava" class="social-link" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/aditya-raj-srivastava-2570a7254/" class="social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/anshusrivastava409/" class="social-link" title="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/anshusrivastw" class="social-link" title="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Aditya Raj Srivastava. Crafted with dedication.</p>
+        </div>
+    </footer>
+
+    <a href="#home" class="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></a>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
