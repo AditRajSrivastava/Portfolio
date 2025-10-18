@@ -121,32 +121,110 @@ window.addEventListener('click', (event) => {
     }
 });
 
-// Form handling simulation
+// Form handling with backend integration
 const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         const submitButton = contactForm.querySelector('.btn-primary');
         const originalText = submitButton.textContent;
         
+        // Get form data
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value
+        };
+        
+        // Update button state
         submitButton.textContent = 'Sending...';
         submitButton.style.opacity = '0.7';
         submitButton.disabled = true;
         
-        setTimeout(() => {
-            submitButton.textContent = 'Message Sent!';
-            submitButton.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+        try {
+            // Send to backend (uses API_CONFIG from api-config.js)
+            const apiEndpoint = window.API_CONFIG?.endpoints?.contact || '/api/contact';
+            const response = await fetch(apiEndpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
             
+            const result = await response.json();
+            
+            if (result.success) {
+                // Success state
+                submitButton.textContent = 'Message Sent!';
+                submitButton.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+                
+                // Show success message
+                showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+                
+                // Reset form after delay
+                setTimeout(() => {
+                    submitButton.textContent = originalText;
+                    submitButton.style.background = 'var(--gradient-orange)';
+                    submitButton.style.opacity = '1';
+                    submitButton.disabled = false;
+                    contactForm.reset();
+                }, 2000);
+            } else {
+                // Error from server
+                throw new Error(result.message || 'Failed to send message');
+            }
+        } catch (error) {
+            console.error('Error sending message:', error);
+            
+            // Error state
+            submitButton.textContent = 'Failed to Send';
+            submitButton.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+            
+            // Show error notification
+            showNotification(error.message || 'Failed to send message. Please try again.', 'error');
+            
+            // Reset button after delay
             setTimeout(() => {
                 submitButton.textContent = originalText;
                 submitButton.style.background = 'var(--gradient-orange)';
                 submitButton.style.opacity = '1';
                 submitButton.disabled = false;
-                contactForm.reset();
-            }, 2000);
-        }, 1500);
+            }, 3000);
+        }
     });
+}
+
+// Notification system
+function showNotification(message, type = 'info') {
+    // Remove existing notification if any
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
+    
+    // Add to body
+    document.body.appendChild(notification);
+    
+    // Trigger animation
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 10);
+    
+    // Remove after 5 seconds
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 5000);
 }
 
 
