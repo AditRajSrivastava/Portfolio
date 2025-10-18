@@ -1,12 +1,13 @@
 // Backend API Configuration
-// Update this URL when you deploy your backend
+// Automatically detects environment and uses correct API URL
 
 // For local development (when running npm start locally)
 const LOCAL_API = 'http://localhost:3000';
 
-// For production (update with your deployed backend URL)
-// Example: 'https://your-app.railway.app' or 'https://your-backend.vercel.app'
-const PRODUCTION_API = window.location.origin; // Uses same domain by default
+// For production - uses same domain (Vercel serverless functions)
+// If you deploy backend separately on Railway, update this to Railway URL
+// Example: 'https://portfolio-production-xxxx.up.railway.app'
+const PRODUCTION_API = window.location.origin;
 
 // Automatically use correct API based on environment
 const API_URL = window.location.hostname === 'localhost' ? LOCAL_API : PRODUCTION_API;
